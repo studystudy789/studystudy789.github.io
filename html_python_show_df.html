@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Python CSV Plot Demo</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+
+</head>
+<body>
+
+<h2>📊 CSV + Pandas + Plot Demo</h2>
+
+<div id="df_output"></div>
+<div id="plot_output"></div>
+
+<py-config>
+packages = [
+    "pandas",
+    "matplotlib"
+]
+</py-config>
+
+<py-script>
+import pandas as pd
+import matplotlib.pyplot as plt
+from io import StringIO
+from pyscript import display
+
+csv_data = """country,year,population
+Japan,2020,125.8
+USA,2020,331.0
+China,2020,1402.0
+"""
+
+df = pd.read_csv(StringIO(csv_data))
+
+display(df, target="df_output")
+
+fig, ax = plt.subplots()
+df.plot(ax=ax, x="country", y="population", kind="bar")
+ax.set_title("Population by Country (2020)")
+ax.set_xlabel("Country")
+ax.set_ylabel("Population (M)")
+display(fig, target="plot_output")
+</py-script>
+
+</body>
+</html>
