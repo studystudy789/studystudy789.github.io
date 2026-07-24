@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级后端 / 数据与云原生架构师 - 个人简历</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --bg-subtle: #334155;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-light: #cbd5e1;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --chip-bg: rgba(56, 189, 248, 0.1);
+            --chip-border: rgba(56, 189, 248, 0.25);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .resume-container {
+            max-width: 1080px;
+            width: 100%;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 32px;
+        }
+
+        /* --- LEFT SIDEBAR --- */
+        .sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .profile-header {
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 36px;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .profile-title {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--accent-primary);
+            margin-top: 4px;
+        }
+
+        .profile-tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 12px;
+            background: rgba(129, 140, 248, 0.15);
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .sidebar-section h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sidebar-section h3 i {
+            color: var(--accent-primary);
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 13.5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
+            color: var(--accent-primary);
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--bg-subtle);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .skill-group {
+            margin-bottom: 16px;
+        }
+
+        .skill-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .skill-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .chip {
+            background: var(--chip-bg);
+            border: 1px solid var(--chip-border);
+            color: var(--accent-primary);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .lang-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13.5px;
+        }
+
+        .lang-name {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .lang-level {
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 12px;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* --- MAIN CONTENT AREA --- */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: var(--text-main);
+        }
+
+        /* Highlight Metrics Banner */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-primary);
+        }
+
+        .metric-value {
+            font-size: 22px;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Timeline / Experience Items */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--bg-subtle);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            box-shadow: 0 0 8px var(--accent-primary);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .role-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .company-name {
+            font-size: 13.5px;
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .exp-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg-subtle);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .exp-summary {
+            font-size: 13.5px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .bullet-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        .tech-stack-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .tech-tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 868px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                height: auto;
+            }
+        }
+
+        /* Print Style Optimization */
+        @media print {
+            body {
+                background-color: #fff;
+                color: #1e293b;
+                padding: 0;
+            }
+            :root {
+                --bg-primary: #ffffff;
+                --bg-card: #ffffff;
+                --bg-subtle: #f1f5f9;
+                --accent-primary: #0284c7;
+                --accent-secondary: #4f46e5;
+                --text-main: #0f172a;
+                --text-muted: #64748b;
+                --text-light: #334155;
+                --border-color: #e2e8f0;
+                --chip-bg: #f0f9ff;
+                --chip-border: #bae6fd;
+                --shadow: none;
+            }
+            .resume-container {
+                gap: 20px;
+            }
+            .card, .sidebar {
+                border: 1px solid #cbd5e1;
+                box-shadow: none;
+            }
+            .avatar {
+                background: #0284c7;
+                color: #fff;
+            }
+            .metric-value {
+                -webkit-text-fill-color: #0284c7;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="avatar">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <h1 class="profile-name">您的姓名</h1>
+            <div class="profile-title">高级后端 & 云原生 / AI数据架构师</div>
+            <div class="profile-tag"><i class="fa-solid fa-users-gear"></i> Sub-leader (团队负责人)</div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="sidebar-section">
+            <h3><i class="fa-solid fa-address-card"></i> 联系方式</h3>
+            <ul class="contact-list">
+                <li>
+                    <a href="mailto:your-email@example.com" class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <span>your-email@example.com</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+81000000000" class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <span>+81 (0)80-XXXX-XXXX</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <span>日本 · 东京 (Tokyo)</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://github.com" target="_blank" class="contact-item">
+                        <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+                        <span>github.com/your-username</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="sidebar-section">
+            <h3><i class="fa-solid fa-layer-group"></i> 核心技能栈</h3>
+            
+            <div class="skill-group">
+                <div class="skill-title">核心后端 & 语言</div>
+                <div class="skill-chips">
+                    <span class="chip">Go (Golang)</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">Java</span>
+                    <span class="chip">SQL</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">云原生 & DevOps</div>
+                <div class="skill-chips">
+                    <span class="chip">Kubernetes</span>
+                    <span class="chip">GKE</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">GCP</span>
+                    <span class="chip">CI/CD</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">数据处理 & AI生态</div>
+                <div class="skill-chips">
+                    <span class="chip">AlloyDB</span>
+                    <span class="chip">ElasticSearch</span>
+                    <span class="chip">Vertex AI</span>
+                    <span class="chip">LLM应用</span>
+                    <span class="chip">ETL/特征工程</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="sidebar-section">
+            <h3><i class="fa-solid fa-language"></i> 语言能力</h3>
+            <div class="lang-list">
+                <div class="lang-item">
+                    <span class="lang-name">日语 (Japanese)</span>
+                    <span class="lang-level">JLPT N1 (商务流畅)</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">中文 (Chinese)</span>
+                    <span class="lang-level">母语</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">英语 (English)</span>
+                    <span class="lang-level">技术工作语言</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- Professional Summary -->
+        <section class="card">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <h2 class="section-title">个人优势 & 核心能力</h2>
+            </div>
+            <p style="color: var(--text-light); font-size: 14px; line-height: 1.7;">
+                拥有 <strong>10年+</strong> 软件开发与系统架构经验，专注于 <strong>云原生架构（Go/GKE）、数据工程与 AI 智能化转型</strong>。现于日本大型知名企业担任团队副负责人（Sub-leader），具备卓越的全栈研发管理与高并发/海量数据系统构建能力。精通大规模数据清洗、自动化 ETL 处理流及 LLM 搜索推荐架构设计，能够高效桥梁业务需求与技术落地。
+            </p>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">10+ 年</div>
+                    <div class="metric-label">软件研发与架构沉淀</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">15 人</div>
+                    <div class="metric-label">跨国团队管理/Sub-leader</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">GCP / GKE</div>
+                    <div class="metric-label">云原生与AI检索深度实践</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="card">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h2 class="section-title">工作与项目经历</h2>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="role-title">大型 AI & 数据系统现场 - Sub-Leader (SL) / 核心架构师</div>
+                            <div class="company-name">某知名日企技术现场 · 东京</div>
+                        </div>
+                        <div class="exp-date">2021.11 - 至今</div>
+                    </div>
+                    <p class="exp-summary">
+                        主导 AI 信息检索、需求预测及智能自动化订货系统的后端与数据管道架构设计。负责从业务需求分析、系统重构、高可用部署到运维调优的全生命周期管理。
+                    </p>
+                    <ul class="bullet-list">
+                        <li><strong>AI 搜索与推荐重构：</strong> 基于 Vertex AI、ElasticSearch 与 LLM（大语言模型）设计并落地企业级向量检索系统，提升搜索精确度与响应速度 35%。</li>
+                        <li><strong>云原生与容器化架构：</strong> 在 Google Cloud Platform (GCP) 上基于 GKE (Kubernetes) 和 AlloyDB 搭建高并发微服务，实现零停机部署与弹性自动扩缩容。</li>
+                        <li><strong>海量数据清洗与 ETL 管道：</strong> 使用 Python & Golang 构建自动化批量处理管道，清洗与特征工程化每日数千万级数据，为 AI 预测模型提供稳定支撑。</li>
+                        <li><strong>技术团队管理：</strong> 作为 Sub-leader 带领 15 人规模的中日混合及离岸开发团队，制定 Code Review 标准、CI/CD 流程及敏捷开发规范。</li>
+                    </ul>
+                    <div class="tech-stack-inline">
+                        <span class="tech-tag">Golang</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Kubernetes (GKE)</span>
+                        <span class="tech-tag">GCP</span>
+                        <span class="tech-tag">AlloyDB</span>
+                        <span class="tech-tag">ElasticSearch</span>
+                        <span class="tech-tag">Vertex AI</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="role-title">高级全栈 & 数据工程专家</div>
+                            <div class="company-name">互联网与金融科技企业</div>
+                        </div>
+                        <div class="exp-date">2016.05 - 2021.10</div>
+                    </div>
+                    <p class="exp-summary">
+                        深耕金融与企业级高可用系统的后端开发、数据可视化引擎设计以及核心业务模块搭建。
+                    </p>
+                    <ul class="bullet-list">
+                        <li><strong>金融级 ETL & 后端系统：</strong> 使用 Java 及 SQL 研发高稳定性 ETL 数据流，保障核心金融交易数据的实时准确清洗与迁移。</li>
+                        <li><strong>高性能数据可视化：</strong> 基于 Go 语言重构数据可视化展示系统，大幅优化数据加载效率与前端图表渲染响应。</li>
+                        <li><strong>跨平台扩展：</strong> 参与 iOS 原生模块（Objective-C）及前端交互重构，积累了扎实的全栈研发与系统演进经验。</li>
+                    </ul>
+                    <div class="tech-stack-inline">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">SQL Server/PostgreSQL</span>
+                        <span class="tech-tag">ETL</span>
+                        <span class="tech-tag">Objective-C</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="card">
+            <div class="section-header">
+                <div class="section-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h2 class="section-title">教育背景</h2>
+            </div>
+            <div class="exp-header">
+                <div>
+                    <div class="role-title">计算机科学与技术 / 软件工程 本科学士</div>
+                    <div class="company-name">全日制统招大学</div>
+                </div>
+                <div class="exp-date">学历认证通过</div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
