@@ -1,672 +1,608 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高级后端 / 数据与云原生架构师 - 个人简历</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-primary: #0f172a;
-            --bg-card: #1e293b;
-            --bg-subtle: #334155;
-            --accent-primary: #38bdf8;
-            --accent-secondary: #818cf8;
-            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-light: #cbd5e1;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --chip-bg: rgba(56, 189, 248, 0.1);
-            --chip-border: rgba(56, 189, 248, 0.25);
-            --radius-lg: 16px;
-            --radius-md: 10px;
-            --radius-sm: 6px;
-            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李 川 (Li Chuan) - 職務経歴書 / Portfolio</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #2563eb;
+      --accent-gradient: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --bg-main: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --tag-bg: #eff6ff;
+      --tag-text: #1e40af;
+      --radius: 12px;
+      --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 40px 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .resume-container {
-            max-width: 1080px;
-            width: 100%;
-            background: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 32px;
-        }
+    body {
+      font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
+    }
 
-        /* --- LEFT SIDEBAR --- */
-        .sidebar {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 32px 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-            box-shadow: var(--shadow);
-            height: fit-content;
-        }
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
 
-        .profile-header {
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 24px;
-        }
+    /* Header Profile Card */
+    .profile-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: var(--accent-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 36px;
-            color: #fff;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-        }
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--accent-gradient);
+    }
 
-        .profile-name {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
-        }
+    .profile-info h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .profile-title {
-            font-size: 13.5px;
-            font-weight: 500;
-            color: var(--accent-primary);
-            margin-top: 4px;
-        }
+    .profile-info h1 .kanji {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
 
-        .profile-tag {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 4px 12px;
-            background: rgba(129, 140, 248, 0.15);
-            border: 1px solid rgba(129, 140, 248, 0.3);
-            border-radius: 20px;
-            font-size: 12px;
-            color: var(--accent-secondary);
-            font-weight: 500;
-        }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
 
-        .sidebar-section h3 {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: var(--text-muted);
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-        .sidebar-section h3 i {
-            color: var(--accent-primary);
-        }
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-        .contact-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            font-size: 13.5px;
-        }
+    .contact-btn-group {
+      display: flex;
+      gap: 12px;
+    }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
 
-        .contact-item:hover {
-            color: var(--accent-primary);
-        }
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
 
-        .contact-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--bg-subtle);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-primary);
-            font-size: 14px;
-            flex-shrink: 0;
-        }
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
 
-        .skill-group {
-            margin-bottom: 16px;
-        }
+    /* Main Layout Grid */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      gap: 24px;
+    }
 
-        .skill-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
+    /* Cards Common */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      margin-bottom: 24px;
+    }
 
-        .skill-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid var(--bg-main);
+      padding-bottom: 12px;
+    }
 
-        .chip {
-            background: var(--chip-bg);
-            border: 1px solid var(--chip-border);
-            color: var(--accent-primary);
-            padding: 4px 10px;
-            border-radius: var(--radius-sm);
-            font-size: 12px;
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 500;
-        }
+    .card-title i {
+      color: var(--accent);
+    }
 
-        .lang-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    /* Left Column: Skills & Info */
+    .skill-group {
+      margin-bottom: 20px;
+    }
 
-        .lang-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13.5px;
-        }
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
 
-        .lang-name {
-            color: var(--text-light);
-            font-weight: 500;
-        }
+    .skill-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
 
-        .lang-level {
-            color: var(--accent-primary);
-            font-weight: 600;
-            font-size: 12px;
-            background: rgba(56, 189, 248, 0.1);
-            padding: 2px 8px;
-            border-radius: 4px;
-        }
+    .tags-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
 
-        /* --- MAIN CONTENT AREA --- */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+    .tag {
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(37, 99, 235, 0.1);
+    }
 
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 28px 32px;
-            box-shadow: var(--shadow);
-        }
+    .tag.highlight {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      font-weight: 600;
+    }
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border-color);
-        }
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
 
-        .section-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--accent-gradient);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
-        }
+    .badge-level {
+      background-color: #dcfce7;
+      color: #166534;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
 
-        .section-title {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            color: var(--text-main);
-        }
+    /* Right Column: Timeline / Projects */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
 
-        /* Highlight Metrics Banner */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-top: 16px;
-        }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      bottom: 5px;
+      width: 2px;
+      background-color: var(--border-color);
+    }
 
-        .metric-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 16px;
-            text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
-        }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
 
-        .metric-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-primary);
-        }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
 
-        .metric-value {
-            font-size: 22px;
-            font-weight: 700;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'JetBrains Mono', monospace;
-        }
+    .timeline-dot {
+      position: absolute;
+      left: -25px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--card-bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
 
-        .metric-label {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
 
-        /* Timeline / Experience Items */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            position: relative;
-        }
+    .project-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
 
-        .timeline-item {
-            position: relative;
-            padding-left: 24px;
-            border-left: 2px solid var(--bg-subtle);
-        }
+    .project-period {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      background-color: var(--tag-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent-primary);
-            box-shadow: 0 0 8px var(--accent-primary);
-        }
+    .project-role-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      gap: 12px;
+    }
 
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+    .project-role-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-        .role-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-main);
-        }
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
 
-        .company-name {
-            font-size: 13.5px;
-            color: var(--accent-primary);
-            font-weight: 500;
-        }
+    .project-desc ul {
+      padding-left: 18px;
+      margin-top: 6px;
+    }
 
-        .exp-date {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-            background: var(--bg-subtle);
-            padding: 3px 8px;
-            border-radius: 4px;
-        }
+    .project-desc li {
+      margin-bottom: 4px;
+    }
 
-        .exp-summary {
-            font-size: 13.5px;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
+    /* Responsive */
+    @media (max-width: 868px) {
+      .grid-layout {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding: 16px;
+      }
+      .profile-card {
+        padding: 24px;
+      }
+    }
 
-        .bullet-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .bullet-list li {
-            position: relative;
-            padding-left: 16px;
-            font-size: 13px;
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        .bullet-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent-primary);
-            font-weight: bold;
-        }
-
-        .tech-stack-inline {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 12px;
-        }
-
-        .tech-tag {
-            font-size: 11px;
-            padding: 2px 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* Responsive Layout */
-        @media (max-width: 868px) {
-            .resume-container {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                height: auto;
-            }
-        }
-
-        /* Print Style Optimization */
-        @media print {
-            body {
-                background-color: #fff;
-                color: #1e293b;
-                padding: 0;
-            }
-            :root {
-                --bg-primary: #ffffff;
-                --bg-card: #ffffff;
-                --bg-subtle: #f1f5f9;
-                --accent-primary: #0284c7;
-                --accent-secondary: #4f46e5;
-                --text-main: #0f172a;
-                --text-muted: #64748b;
-                --text-light: #334155;
-                --border-color: #e2e8f0;
-                --chip-bg: #f0f9ff;
-                --chip-border: #bae6fd;
-                --shadow: none;
-            }
-            .resume-container {
-                gap: 20px;
-            }
-            .card, .sidebar {
-                border: 1px solid #cbd5e1;
-                box-shadow: none;
-            }
-            .avatar {
-                background: #0284c7;
-                color: #fff;
-            }
-            .metric-value {
-                -webkit-text-fill-color: #0284c7;
-            }
-        }
-    </style>
+    /* Print Optimization */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .container {
+        max-width: 100%;
+      }
+      .card, .profile-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+      }
+      .btn {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="resume-container">
+<div class="container">
 
-    <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
-        <!-- Profile Header -->
-        <div class="profile-header">
-            <div class="avatar">
-                <i class="fa-solid fa-code"></i>
-            </div>
-            <h1 class="profile-name">您的姓名</h1>
-            <div class="profile-title">高级后端 & 云原生 / AI数据架构师</div>
-            <div class="profile-tag"><i class="fa-solid fa-users-gear"></i> Sub-leader (团队负责人)</div>
+  <!-- Header Profile Card -->
+  <div class="profile-card">
+    <div class="profile-info">
+      <h1>李 川 <span class="kanji">( Li Chuan )</span></h1>
+      <div class="subtitle">Data Engineer / ML & LLM Platform / Tech Lead</div>
+      <div class="meta-tags">
+        <div class="meta-item"><i class="fa-solid fa-location-dot"></i> 東京都江東区</div>
+        <div class="meta-item"><i class="fa-solid fa-briefcase"></i> 開発経験 10年 (日本直近4.5年)</div>
+        <div class="meta-item"><i class="fa-solid fa-user-shield"></i> Sub-leader / Offshore Lead 経験</div>
+      </div>
+    </div>
+    <div class="contact-btn-group">
+      <a href="mailto:your-email@example.com" class="btn btn-primary">
+        <i class="fa-solid fa-envelope"></i> お問い合わせ
+      </a>
+    </div>
+  </div>
+
+  <!-- Main 2-Column Layout -->
+  <div class="grid-layout">
+
+    <!-- Left Column: Skills & Summary -->
+    <div class="left-col">
+
+      <!-- キャリア概要 -->
+      <div class="card">
+        <div class="card-title">
+          <i class="fa-solid fa-user"></i> 自己PR・概要
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-main); line-height: 1.6;">
+          IT業界にて約10年の経験を持ち、直近4年半は日本の大手AI・データ基盤システム現場にて<b>サブリーダー（SL）兼コアエンジニア</b>として参画。<br><br>
+          大規模データパイプライン構築、LLM・ElasticSearch検索基盤、LightGBM/Vertex AIを用いた需要予測バッチシステムのクラウド移行を牽引。将来的には<b>技術マネジメント（Tech Lead / EM）</b>と高水準なハンズオン開発の両立を目指します。
+        </p>
+      </div>
+
+      <!-- 主要スキル -->
+      <div class="card">
+        <div class="card-title">
+          <i class="fa-solid fa-layer-group"></i> 技術スタック
         </div>
 
-        <!-- Contact Info -->
-        <div class="sidebar-section">
-            <h3><i class="fa-solid fa-address-card"></i> 联系方式</h3>
-            <ul class="contact-list">
-                <li>
-                    <a href="mailto:your-email@example.com" class="contact-item">
-                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <span>your-email@example.com</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="tel:+81000000000" class="contact-item">
-                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-                        <span>+81 (0)80-XXXX-XXXX</span>
-                    </a>
-                </li>
-                <li>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <span>日本 · 东京 (Tokyo)</span>
-                    </div>
-                </li>
-                <li>
-                    <a href="https://github.com" target="_blank" class="contact-item">
-                        <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
-                        <span>github.com/your-username</span>
-                    </a>
-                </li>
-            </ul>
+        <div class="skill-group">
+          <div class="skill-label">主要開発言語</div>
+          <div class="tags-wrapper">
+            <span class="tag highlight">Python (8年+)</span>
+            <span class="tag highlight">Golang</span>
+            <span class="tag highlight">SQL</span>
+            <span class="tag">Shell</span>
+            <span class="tag">Java</span>
+            <span class="tag">C/C++</span>
+          </div>
         </div>
 
-        <!-- Technical Skills -->
-        <div class="sidebar-section">
-            <h3><i class="fa-solid fa-layer-group"></i> 核心技能栈</h3>
-            
-            <div class="skill-group">
-                <div class="skill-title">核心后端 & 语言</div>
-                <div class="skill-chips">
-                    <span class="chip">Go (Golang)</span>
-                    <span class="chip">Python</span>
-                    <span class="chip">Java</span>
-                    <span class="chip">SQL</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">云原生 & DevOps</div>
-                <div class="skill-chips">
-                    <span class="chip">Kubernetes</span>
-                    <span class="chip">GKE</span>
-                    <span class="chip">Docker</span>
-                    <span class="chip">GCP</span>
-                    <span class="chip">CI/CD</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <div class="skill-title">数据处理 & AI生态</div>
-                <div class="skill-chips">
-                    <span class="chip">AlloyDB</span>
-                    <span class="chip">ElasticSearch</span>
-                    <span class="chip">Vertex AI</span>
-                    <span class="chip">LLM应用</span>
-                    <span class="chip">ETL/特征工程</span>
-                </div>
-            </div>
+        <div class="skill-group">
+          <div class="skill-label">AI / ML / Search</div>
+          <div class="tags-wrapper">
+            <span class="tag highlight">LLM (RAG/API)</span>
+            <span class="tag highlight">ElasticSearch</span>
+            <span class="tag">LightGBM</span>
+            <span class="tag">Vertex AI</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Pytest</span>
+          </div>
         </div>
 
-        <!-- Languages -->
-        <div class="sidebar-section">
-            <h3><i class="fa-solid fa-language"></i> 语言能力</h3>
-            <div class="lang-list">
-                <div class="lang-item">
-                    <span class="lang-name">日语 (Japanese)</span>
-                    <span class="lang-level">JLPT N1 (商务流畅)</span>
-                </div>
-                <div class="lang-item">
-                    <span class="lang-name">中文 (Chinese)</span>
-                    <span class="lang-level">母语</span>
-                </div>
-                <div class="lang-item">
-                    <span class="lang-name">英语 (English)</span>
-                    <span class="lang-level">技术工作语言</span>
-                </div>
-            </div>
+        <div class="skill-group">
+          <div class="skill-label">Cloud / Data Infrastructure</div>
+          <div class="tags-wrapper">
+            <span class="tag">Google Cloud (GCP)</span>
+            <span class="tag">AlloyDB</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Airflow / Composer</span>
+            <span class="tag">GKE / Docker</span>
+            <span class="tag">CircleCI</span>
+          </div>
         </div>
-    </aside>
+      </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
+      <!-- 語学 & 資格 -->
+      <div class="card">
+        <div class="card-title">
+          <i class="fa-solid fa-language"></i> 語学・資格
+        </div>
+        <div class="lang-item">
+          <span><b>日本語</b> (ビジネス)</span>
+          <span class="badge-level">JLPT N1</span>
+        </div>
+        <div class="lang-item">
+          <span><b>中国語</b> (母国語)</span>
+          <span class="badge-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span><b>英語</b> (ドキュメント読解)</span>
+          <span class="badge-level">CET-4</span>
+        </div>
+      </div>
 
-        <!-- Professional Summary -->
-        <section class="card">
-            <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-user-astronaut"></i></div>
-                <h2 class="section-title">个人优势 & 核心能力</h2>
+    </div>
+
+    <!-- Right Column: Timeline & Experience -->
+    <div class="right-col">
+
+      <div class="card">
+        <div class="card-title">
+          <i class="fa-solid fa-laptop-code"></i> 職務経歴 (Projects)
+        </div>
+
+        <div class="timeline">
+
+          <!-- Project 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="project-title">1. AI情報検索 ＆ 自動発注システム基盤開発・クラウド移行</div>
+              <div class="project-period">2022.03 - 現在 (4.5年)</div>
             </div>
-            <p style="color: var(--text-light); font-size: 14px; line-height: 1.7;">
-                拥有 <strong>10年+</strong> 软件开发与系统架构经验，专注于 <strong>云原生架构（Go/GKE）、数据工程与 AI 智能化转型</strong>。现于日本大型知名企业担任团队副负责人（Sub-leader），具备卓越的全栈研发管理与高并发/海量数据系统构建能力。精通大规模数据清洗、自动化 ETL 处理流及 LLM 搜索推荐架构设计，能够高效桥梁业务需求与技术落地。
-            </p>
-
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-value">10+ 年</div>
-                    <div class="metric-label">软件研发与架构沉淀</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">15 人</div>
-                    <div class="metric-label">跨国团队管理/Sub-leader</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">GCP / GKE</div>
-                    <div class="metric-label">云原生与AI检索深度实践</div>
-                </div>
+            <div class="project-role-meta">
+              <span><i class="fa-solid fa-user-gear"></i> 役割: Sub-leader / SE</span>
+              <span><i class="fa-solid fa-users"></i> 規模: 5〜15名</span>
+              <span><i class="fa-solid fa-location-dot"></i> 日本</span>
             </div>
-        </section>
-
-        <!-- Work Experience -->
-        <section class="card">
-            <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-briefcase"></i></div>
-                <h2 class="section-title">工作与项目经历</h2>
+            <div class="project-desc">
+              大手コンビニ・流通向けAI基盤プロジェクトにて、AI情報検索機能およびAI自動発注バッチシステムのコア開発・移行を統括。
+              <ul>
+                <li><b>AI情報検索エンジン:</b> ElasticSearchおよびLLMを活用した検索精度向上・チューニング・テスト検証を実施。</li>
+                <li><b>自動発注バッチ移行:</b> Python/Pandas/BigQueryを用いたデータパイプラインの構築、LightGBM/Vertex AIモデルの組み込み。</li>
+                <li><b>マネジメント:</b> 8〜15名規模チームの進捗・課題管理、および中国オフショアチームへのタスク展開・コードレビューを主导。</li>
+              </ul>
             </div>
-
-            <div class="timeline">
-
-                <!-- Experience Item 1 -->
-                <div class="timeline-item">
-                    <div class="exp-header">
-                        <div>
-                            <div class="role-title">大型 AI & 数据系统现场 - Sub-Leader (SL) / 核心架构师</div>
-                            <div class="company-name">某知名日企技术现场 · 东京</div>
-                        </div>
-                        <div class="exp-date">2021.11 - 至今</div>
-                    </div>
-                    <p class="exp-summary">
-                        主导 AI 信息检索、需求预测及智能自动化订货系统的后端与数据管道架构设计。负责从业务需求分析、系统重构、高可用部署到运维调优的全生命周期管理。
-                    </p>
-                    <ul class="bullet-list">
-                        <li><strong>AI 搜索与推荐重构：</strong> 基于 Vertex AI、ElasticSearch 与 LLM（大语言模型）设计并落地企业级向量检索系统，提升搜索精确度与响应速度 35%。</li>
-                        <li><strong>云原生与容器化架构：</strong> 在 Google Cloud Platform (GCP) 上基于 GKE (Kubernetes) 和 AlloyDB 搭建高并发微服务，实现零停机部署与弹性自动扩缩容。</li>
-                        <li><strong>海量数据清洗与 ETL 管道：</strong> 使用 Python & Golang 构建自动化批量处理管道，清洗与特征工程化每日数千万级数据，为 AI 预测模型提供稳定支撑。</li>
-                        <li><strong>技术团队管理：</strong> 作为 Sub-leader 带领 15 人规模的中日混合及离岸开发团队，制定 Code Review 标准、CI/CD 流程及敏捷开发规范。</li>
-                    </ul>
-                    <div class="tech-stack-inline">
-                        <span class="tech-tag">Golang</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Kubernetes (GKE)</span>
-                        <span class="tech-tag">GCP</span>
-                        <span class="tech-tag">AlloyDB</span>
-                        <span class="tech-tag">ElasticSearch</span>
-                        <span class="tech-tag">Vertex AI</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
-
-                <!-- Experience Item 2 -->
-                <div class="timeline-item">
-                    <div class="exp-header">
-                        <div>
-                            <div class="role-title">高级全栈 & 数据工程专家</div>
-                            <div class="company-name">互联网与金融科技企业</div>
-                        </div>
-                        <div class="exp-date">2016.05 - 2021.10</div>
-                    </div>
-                    <p class="exp-summary">
-                        深耕金融与企业级高可用系统的后端开发、数据可视化引擎设计以及核心业务模块搭建。
-                    </p>
-                    <ul class="bullet-list">
-                        <li><strong>金融级 ETL & 后端系统：</strong> 使用 Java 及 SQL 研发高稳定性 ETL 数据流，保障核心金融交易数据的实时准确清洗与迁移。</li>
-                        <li><strong>高性能数据可视化：</strong> 基于 Go 语言重构数据可视化展示系统，大幅优化数据加载效率与前端图表渲染响应。</li>
-                        <li><strong>跨平台扩展：</strong> 参与 iOS 原生模块（Objective-C）及前端交互重构，积累了扎实的全栈研发与系统演进经验。</li>
-                    </ul>
-                    <div class="tech-stack-inline">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Go</span>
-                        <span class="tech-tag">SQL Server/PostgreSQL</span>
-                        <span class="tech-tag">ETL</span>
-                        <span class="tech-tag">Objective-C</span>
-                    </div>
-                </div>
-
+            <div class="tags-wrapper">
+              <span class="tag">Python</span>
+              <span class="tag">LLM</span>
+              <span class="tag">ElasticSearch</span>
+              <span class="tag">GCP</span>
+              <span class="tag">AlloyDB</span>
+              <span class="tag">BigQuery</span>
+              <span class="tag">Airflow</span>
+              <span class="tag">LightGBM</span>
             </div>
-        </section>
+          </div>
 
-        <!-- Education -->
-        <section class="card">
-            <div class="section-header">
-                <div class="section-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h2 class="section-title">教育背景</h2>
+          <!-- Project 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="project-title">2. SumiCloud クラウド連携 iOSアプリ開発</div>
+              <div class="project-period">2020.11 - 2022.02</div>
             </div>
-            <div class="exp-header">
-                <div>
-                    <div class="role-title">计算机科学与技术 / 软件工程 本科学士</div>
-                    <div class="company-name">全日制统招大学</div>
-                </div>
-                <div class="exp-date">学历认证通过</div>
+            <div class="project-role-meta">
+              <span><i class="fa-solid fa-user-gear"></i> 役割: PG</span>
+              <span><i class="fa-solid fa-users"></i> 規模: 6名</span>
             </div>
-        </section>
+            <div class="project-desc">
+              Objective-Cを用いたクラウド連携モバイルアプリの画面構築・機能実装。ローカルSQLiteとAWS間のデータ同期ロジック改修およびパフォーマンス改善。
+            </div>
+            <div class="tags-wrapper">
+              <span class="tag">Objective-C</span>
+              <span class="tag">iOS</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
 
-    </main>
+          <!-- Project 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="project-title">3. KeepData 大規模データ可視化 Webシステム</div>
+              <div class="project-period">2019.05 - 2020.11</div>
+            </div>
+            <div class="project-role-meta">
+              <span><i class="fa-solid fa-user-gear"></i> 役割: SE / PG</span>
+              <span><i class="fa-solid fa-users"></i> 規模: 5名</span>
+            </div>
+            <div class="project-desc">
+              Golangを用いた高速ファイルデータベース連携バックエンドAPIの設計・実装。EChartsによるリアルタイムデータビジュアライゼーションを構築。
+            </div>
+            <div class="tags-wrapper">
+              <span class="tag">Golang</span>
+              <span class="tag">PHP</span>
+              <span class="tag">ECharts</span>
+              <span class="tag">File DB</span>
+            </div>
+          </div>
+
+          <!-- Project 4 & 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="project-title">4. データVIEWシステム ＆ 金融系システム改修</div>
+              <div class="project-period">2018.01 - 2019.04</div>
+            </div>
+            <div class="project-role-meta">
+              <span><i class="fa-solid fa-user-gear"></i> 役割: PG / SE</span>
+            </div>
+            <div class="project-desc">
+              Python (Pandas) / Django による大量データクレンジング・自動分類パイプライン開発。およびDelphi/MFC金融システムの改修。
+            </div>
+            <div class="tags-wrapper">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+
+          <!-- Project 6 & 7 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-header">
+              <div class="project-title">5. 銀行向け業務管理 ＆ 大規模ETLシステム開発</div>
+              <div class="project-period">2016.07 - 2017.12</div>
+            </div>
+            <div class="project-role-meta">
+              <span><i class="fa-solid fa-user-gear"></i> 役割: PG</span>
+            </div>
+            <div class="project-desc">
+              Java / DB2 環境における大規模データ抽出・集計・ETLバッチ処理開発。WebSphere基盤での社内管理Webシステム構築。
+            </div>
+            <div class="tags-wrapper">
+              <span class="tag">Java</span>
+              <span class="tag">Spring</span>
+              <span class="tag">DB2</span>
+              <span class="tag">ETL</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 今後の展望 -->
+      <div class="card">
+        <div class="card-title">
+          <i class="fa-solid fa-compass"></i> キャリアビジョン (Vision)
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-main); line-height: 1.6;">
+          これまでのサブリーダー・プロジェクト管理経験と、AI/LLM・データ基盤の専門知識を融合させ、今後は<b>Tech Lead / Engineering Manager</b>として組織の技術力向上とプロダクトの成長に貢献します。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
